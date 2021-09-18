@@ -2,7 +2,7 @@
     "list":[
         {
             "command": ["calcule-lançamento", "calcule-lancamento", "cl"],
-            "syntax": "calcule-lançamento [massa] [reutilizável(s/n)]",
+            "syntax": "calcule-lançamento [massa] [reutilizável(s/n)] [dificuldade(1 a 6)]",
             "description": "calcula o valor de recompensa de lançamentos individuais.",
             "nvlPermission": 1
         },
