@@ -1,0 +1,176 @@
+{
+    "list": [
+        {
+            "id": "470962283627937792",
+            "permission": 2,
+            "prefix": "=",
+            "missionChannelID": "875753037044535296",
+            "manutentionRoleName": "Staff",
+            "missions": [
+                [
+                    "volta a vênus ",
+                    "depois de muitos anos sem mandar nenhuma sonda até vênus, a roscosmos decide enviar outra sonda até o planeta, com seu novo e desenvolvido projeto, que consegue aguentar o calor de vênus.",
+                    "pouse e recolha amostras do solo de vênus e volte com elas para a terra em segurança.",
+                    3,
+                    "o foguete deve conter apenas 3 estágios, e 1 painel solar na sonda.",
+                    "cheats ou bugs.",
+                    "2 dias.",
+                    "Zirilo#2717"
+                    
+                ]
+            ],
+            "levels": [
+                [
+                    20000,
+                    40000,
+                    8000,
+                    20
+                ],
+                [
+                    25000,
+                    50000,
+                    10000,
+                    20
+                ],
+                [
+                    30000,
+                    60000,
+                    12000,
+                    20
+                ],
+                [
+                    35000,
+                    70000,
+                    14000,
+                    20
+                ],
+                [
+                    40000,
+                    80000,
+                    16000,
+                    20
+                ],
+                [
+                    45000,
+                    90000,
+                    18000,
+                    20
+                ]
+            ]
+        },
+        {
+            "id": "884517353008824330",
+            "permission": 1,
+            "prefix": "=",
+            "missionChannelID": "",
+            "manutentionRoleName": "",
+            "missions": [],
+            "levels": [
+                [
+                    20000,
+                    40000,
+                    8000,
+                    20
+                ],
+                [
+                    25000,
+                    50000,
+                    10000,
+                    20
+                ],
+                [
+                    30000,
+                    60000,
+                    12000,
+                    20
+                ],
+                [
+                    35000,
+                    70000,
+                    14000,
+                    20
+                ],
+                [
+                    40000,
+                    80000,
+                    16000,
+                    20
+                ],
+                [
+                    45000,
+                    90000,
+                    18000,
+                    20
+                ]
+            ]
+        },
+        {
+            "id": "875804131472855040",
+            "permission": 5,
+            "prefix": [
+                "="
+            ],
+            "missionChannelID": "884627550305923092",
+            "manutentionRoleName": "",
+            "missions": [
+                [
+                    "3a ",
+                    "a ",
+                    "a ",
+                    1,
+                    "a ",
+                    "a ",
+                    "a ",
+                    "Frederico Andrade#7061"
+                ]
+            ],
+            "levels": [
+                [
+                    20000,
+                    40000,
+                    8000,
+                    20
+                ],
+                [
+                    25000,
+                    50000,
+                    10000,
+                    20
+                ],
+                [
+                    30000,
+                    60000,
+                    12000,
+                    20
+                ],
+                [
+                    35000,
+                    70000,
+                    14000,
+                    20
+                ],
+                [
+                    40000,
+                    80000,
+                    16000,
+                    20
+                ],
+                [
+                    45000,
+                    90000,
+                    18000,
+                    20
+                ]
+            ],
+            "agencies": [
+                {
+                    "userId": "",
+                    "name": "",
+                    "level": "",
+                    "launches": 0,
+                    "money": 0
+                }
+            ]
+        }
+    ]
+}

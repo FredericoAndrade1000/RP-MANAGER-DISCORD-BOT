@@ -1,0 +1,100 @@
+{
+    "list":[
+        {
+            "command": ["calcule-lançamento", "calcule-lancamento", "cl"],
+            "syntax": "calcule-lançamento [massa] [reutilizável(s/n)]",
+            "description": "calcula o valor de recompensa de lançamentos individuais.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["calcule-missão", "calcule-missão", "cm"],
+            "syntax": "calcule-missão [massa] [reutilizável(s/n)] [dificuldade(1 a 6)]",
+            "description": "calcula o valor de recompensa de cumprimento de missão.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["calcule-criador", "cc"],
+            "syntax": "calcule-criador [número de concluíntes] [dificuldade(1 a 6)]",
+            "description": "calcula o valor da recompensa dada aos criadores de missão.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["definir-nível", "definir-nivel", "dn"],
+            "syntax": "definir-nível [nível (número)] [remuneração por lançamento] [remuneração por missão] [remuneração para criador] [custo por tonelada]",
+            "description": "cria ou edita um nível e suas quantias.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["mostrar-níveis", "mostrar-niveis", "mn"],
+            "syntax": "mostrar-níveis",
+            "description": "mostra todos os níveis criados.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["remover-nível", "remover-nivel", "rn"],
+            "syntax": "remover-nível [número do nível]",
+            "description": "remove o nível selecionado. Redefine a ordem dos subsequentes. Apague com cuidado.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["definir-prefíxo", "definir-prefixo", "dp"],
+            "syntax": "definir-prefixo [prefixo]",
+            "description": "define o prefixo do bot para o servidor.",
+            "nvlPermission": 1
+        },
+        {
+            "command": ["adicionar-missão", "am"],
+            "syntax": "adicionar-missão [título] & [descrição] & [objetivo] & [dificuldade] & [observações] & [proibições] & [prazo de entrega]",
+            "description": "cria uma nova missão. Use & para separar argumentos.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["mostrar-missões", "mostrar-missoes", "mm"],
+            "syntax": "mostrar-missões",
+            "description": "mostra todas as missões criadas.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["remover-missão", "remover-missao", "rm"],
+            "syntax": "remover-missão [número da missão]",
+            "description": "remove a missão selecionada. Redefine a ordem das missões subsequentes.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["postar-missão", "postar-missao", "pm"],
+            "syntax": "postar-missão [número da missão]",
+            "description": "posta no canal definido a missão selecionada.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["definir-canal-missões", "definir-canal-missoes", "dcm"],
+            "syntax": "definir-canal-missões [ID do canal]",
+            "description": "define o canal onde serão postadas as missões.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["definir-cargo-gerenciador", "dcg"],
+            "syntax": "definir-cargo-gerenciador [nome do cargo]",
+            "description": "define o cargo que pode usar alguns comandos específicos.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["registrar-agência", "registrar-agencia"],
+            "syntax": "registrar-agência [nome] [descrição]",
+            "description": "registra uma agência para o usuário.",
+            "nvlPermission": 3
+        },
+        {
+            "command": ["editar-agência", "editar-agencia"],
+            "syntax": "editar-agência [nome] [descrição]",
+            "description": "edita a agência anteriormente criada pelo usuário.",
+            "nvlPermission": 3
+        },
+        {
+            "command": ["executar-lançamento", "executar-lancamento", "el"],
+            "syntax": "executar-lançamento [objetivo] [massa] [reutilizável(s/n)] [dificuldade] [url de imagens(separe com & para adicionar várias)]",
+            "description": "executa um lançamento.",
+            "nvlPermission": 3
+        }
+    ]
+}
