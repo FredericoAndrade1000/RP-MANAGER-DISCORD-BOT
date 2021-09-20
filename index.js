@@ -13,7 +13,7 @@ client.on("ready", function(){
 client.on("guildCreate", function(guild){
     for (var i = 0; i < server.list.length; i++){
         if (guild.id == server.list[i].id){
-            break
+           return
         } 
         else{
             server.list.push({
@@ -50,7 +50,7 @@ client.on("messageCreate", async function(message){
                 permission: 1,
                 prefix: "=",
                 missionChannelID: "",
-                manutentionRoleName: "",
+                manutentionRoleID: "",
                 missions: [],
                 levels: [[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]]
             })
@@ -70,12 +70,13 @@ client.on("messageCreate", async function(message){
         return
     }
     if(!message.content.startsWith(server.list[serv].prefix)){return}
-    const a = message.content.toLowerCase().slice(1).trim().split(" ")
-    const c = a.shift()
+    const a = message.content.slice(1).trim().split(" ")
+    var c = a.shift()
+    c = c.toLowerCase()
     //Nível 1
     //calcule-lançamento
     if (c == cmds.list[0].command[0] || c == cmds.list[0].command[1] || c == cmds.list[0].command[2]){
-        if (isNaN(a[0]) || isNaN(a[2]) || a[1] == undefined || a[3] != undefined || a[1] != "s" && a[1] != "n"){syntaxError(message, 0); return}
+        if (isNaN(a[0]) || isNaN(a[2]) || a[1] == undefined || a[3] != undefined || a[1].toLowerCase() != "s" && a[1].toLowerCase() != "n"){syntaxError(message, 0); return}
         if (server.list[serv].levels[a[2]-1] == undefined){
             message.channel.send({ embeds: [setEmbed(message,`:x: O nível ${a[2]} ainda não foi definido.`, "", "", "", "ef5250")] })
             return
@@ -97,7 +98,7 @@ client.on("messageCreate", async function(message){
     }
     //calcule-missão
     else if (c == cmds.list[1].command[0] || c == cmds.list[1].command[1] || c == cmds.list[1].command[2]){
-        if (isNaN(a[0]) || isNaN(a[2]) || a[1] == undefined || a[3] != undefined || a[1] != "s" && a[1] != "n"){syntaxError(message, 1); return}
+        if (isNaN(a[0]) || isNaN(a[2]) || a[1] == undefined || a[3] != undefined || a[1].toLowerCase() != "s" && a[1].toLowerCase() != "n"){syntaxError(message, 1); return}
         if (server.list[serv].levels[a[2]-1] == undefined){
             message.channel.send({ embeds: [setEmbed(message,`:x: O nível ${a[2]} ainda não foi definido.`, "", "", "", "ef5250")] })
             return
@@ -231,7 +232,7 @@ client.on("messageCreate", async function(message){
     if (server.list[serv].permission < 2){return}
     //adicionar-missão
     else if (c == cmds.list[7].command[0] || c == cmds.list[7].command[1]){
-        if(!message.member.roles.cache.some(r => r.name == server.list[serv].manutentionRoleName) && !message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
+        if(!message.member.roles.cache.some(r => r.id == server.list[serv].manutentionRoleID) && !message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
             message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem permissão para usar esse comando.`, "", "", "", "ef5250")] })
             return
         }
@@ -277,7 +278,7 @@ client.on("messageCreate", async function(message){
     }
     //remover-missão
     else if (c == cmds.list[9].command[0] || c == cmds.list[9].command[1] || c == cmds.list[9].command[2]){
-        if(!message.member.roles.cache.some(r => r.name == server.list[serv].manutentionRoleName) && !message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
+        if(!message.member.roles.cache.some(r => r.id == server.list[serv].manutentionRoleID) && !message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
             message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem permissão para usar esse comando.`, "", "", "", "ef5250")] })
             return
         }
@@ -297,7 +298,7 @@ client.on("messageCreate", async function(message){
     }
     //postar-missão
     else if (c == cmds.list[10].command[0] || c == cmds.list[10].command[1] || c == cmds.list[10].command[2]){
-        if(!message.member.roles.cache.some(r => r.name == server.list[serv].manutentionRoleName) && !message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
+        if(!message.member.roles.cache.some(r => r.id == server.list[serv].manutentionRoleID) && !message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
             message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem permissão para usar esse comando.`, "", "", "", "ef5250")] })
             return
         }
@@ -337,7 +338,7 @@ client.on("messageCreate", async function(message){
     }
     //definir-canal-missões
     else if (c == cmds.list[11].command[0] || c == cmds.list[11].command[1] || c == cmds.list[11].command[2]){
-        if(!message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR) && !message.member.roles.cache.some(r => r.name == server.list[serv].manutentionRoleName)){
+        if(!message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR) && !message.member.roles.cache.some(r => r.id == server.list[serv].manutentionRoleID)){
             message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem permissão para usar esse comando.`, "", "", "", "ef5250")] })
             return
         }
@@ -359,37 +360,80 @@ client.on("messageCreate", async function(message){
         }
         if(a[0] == undefined || a[1] != undefined){syntaxError(message, 12); return}
 
-        server.list[serv].manutentionRoleName = a[0]
+        server.list[serv].manutentionRoleID = a[0]
         fs.writeFile("server.json", JSON.stringify(server), function(error){
             if(error){
                 console.log(error);
             }
         })
-        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: O cargo de gerenciador foi definido com sucesso para ${server.list[serv].manutentionRoleName}.`, "", "", "", "1baf22")] })
+        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: O id cargo de gerenciador foi definido com sucesso para ${server.list[serv].manutentionRoleID}.`, "", "", "", "1baf22")] })
         return
     }
     //registrar-agência
     else if(c == cmds.list[13].command[0] || c == cmds.list[13].command[1]){
-        if(a[0] == undefined || a[1] != undefined){syntaxError(message, 13); return}
-        server.list[serv].agencies.push(
-            {
-                userId: message.author.id,
-                name: a[0],
-                level: 1,
-                launches: 0,
-                money: 0
-            }
-        )
-        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: A agência ${a[0]} foi definida com sucesso.`, "", "", "", "1baf22")] })
-    }
-    //editar-agência
-    else if(c == cmds.list[14].command[0] || c == cmds.list[14].command[1]){
-        if(a[0] == undefined || a[1] != undefined){syntaxError(message, 14); return}
-        for (var i = 0; i < server.list[serv].agencies[i].userId; i++){
-            if (message.author.id == server.list[serv].agencies[i].userId){
+        var elements = ["",""]
+        for (var i = 0, ii = 0; i < a.length; i++){
+            if (a[i] == "&"){
+                ii++
+            } else{
+                elements[ii] += a[i] + " "
             }
         }
-        message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem uma agência registrada.`, "", "", "", "ef5250")] })
+        if(elements[0] == "" || elements[1] == ""){syntaxError(message, 13); return}
+        for (var i = 0; i < server.list[serv].agencies.length; i++){
+            if (message.author.id == server.list[serv].agencies[i].userId){
+                server.list[serv].agencies[i].name = elements[0]
+                server.list[serv].agencies[i].description = elements[1]
+                break
+            }
+            if (i == server.list[serv].agencies.length-1){
+                server.list[serv].agencies.push(
+                    {
+                        userId: message.author.id,
+                        name: elements[0],
+                        description: elements[1],
+                        level: 1,
+                        blueprints: [],
+                        money: 0
+                    }
+                )
+                break
+            }
+        }
+        fs.writeFile("server.json", JSON.stringify(server), function(error){
+            if(error){
+                console.log(error);
+            }
+        })
+        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: A agência ${elements[0]} foi definida com sucesso.`, "", "", "", "1baf22")] })
+        return
+    }
+    //agência
+    else if (c == cmds.list[14].command[0] || c == cmds.list[14].command[1] || c == cmds.list[14].command[3]){
+        if (a[0] != undefined){syntaxError(message, 14); return}
+        var agencyI
+        for (var i = 0; i < server.list[serv].agencies.length; i++){
+            if (message.author.id == server.list[serv].agencies[i].userId){
+                agencyI = i
+                break
+            }
+            if (i == server.list[serv].agencies.length-1){
+                message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem uma agência registrada.`, "", "", "", "ef5250")] })
+                return
+            }
+        }
+        embed = new Discord.MessageEmbed()
+        .setColor("#17b091")
+        .setAuthor("")
+        .setTitle("Agência: " + server.list[serv].agencies[agencyI].name)
+        .setFields(
+            {name: `:level_slider: Nível: ${server.list[serv].agencies[agencyI].level}`, value: `\u200B`},
+            {name: ":notepad_spiral: Descrição: ", value: `${server.list[serv].agencies[agencyI].description}`, inline: true},
+            {name: "\u200B", value: "\u200B", inline: true},
+            {name: ":moneybag: Patrimônio: ", value: `RP$ ${server.list[serv].agencies[agencyI].money}`, inline: true}
+        )
+        .setTimestamp()
+        message.channel.send({ embeds: [embed] })
         return
     }
     //Nível 3
@@ -427,4 +471,4 @@ function syntaxError(m, i){
     .setColor("ef5250")
     m.channel.send({embeds: [embed]})
 }
-client.login(config.token)
+client.login(config.token2)
