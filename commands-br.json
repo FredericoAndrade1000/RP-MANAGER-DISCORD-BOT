@@ -81,14 +81,20 @@
         {
             "command": ["registrar-agência", "registrar-agencia"],
             "syntax": "registrar-agência [nome] & [descrição]",
-            "description": "Registra uma agência para o usuário. Use & para separar argumentos",
-            "nvlPermission": 3
+            "description": "Registra uma agência para o usuário. Use & para separar argumentos.",
+            "nvlPermission": 2
         },
         {
             "command": ["agência", "agencia", "a"],
             "syntax": "agência",
             "description": "Mostra informações sobre a agência do usuário.",
-            "nvlPermission": 3
+            "nvlPermission": 2
+        },
+        {
+            "command": ["remover-agência", "remover-agencia"],
+            "syntax": "remover-agência [confirmar remoção]",
+            "description": "Remove permanentemente a agência do usuário.",
+            "nvlPermission": 2
         },
         {
             "command": ["executar-lançamento", "executar-lancamento", "el"],

@@ -24,7 +24,8 @@ client.on("guildCreate", function(guild){
                 missionChannelID: "",
                 manutentionRoleName: "",
                 missions: [],
-                levels: [[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]]
+                levels: [[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]],
+                agencies: [{}]
             })
             fs.writeFile("server.json", JSON.stringify(server), function(error){
                 if(error){
@@ -52,7 +53,8 @@ client.on("messageCreate", async function(message){
                 missionChannelID: "",
                 manutentionRoleID: "",
                 missions: [],
-                levels: [[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]]
+                levels: [[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]],
+                agencies: [{}]
             })
             fs.writeFile("server.json", JSON.stringify(server), function(error){
                 if(error){
@@ -218,14 +220,14 @@ client.on("messageCreate", async function(message){
     }
     //ajuda
     else if (c == "help" || c == "ajuda" || c == "?" || c == "comandos"){
-        var str = ""
-        for (var i = 0; i < cmds.list.length; i++){
-            if (cmds.list[i].nvlPermission <= server.list[serv].permission){
-                str += `\`${cmds.list[i].syntax}\`\n`
-                str += `${cmds.list[i].description}\n\n`
-            }
-        }
-        message.channel.send({ embeds: [setEmbed(message,`Prefixo: \`${server.list[serv].prefix}\`\n\n ${str} Nível ${server.list[serv].permission}/5 de permissão de servidor.`, "Ajuda", "Desenvolvido por Frederico Andrade")] })
+        const row = new Discord.MessageActionRow()
+        .addComponents(
+            new Discord.MessageButton()
+                .setLabel('Ver Comandos')
+                .setURL("https://rp-manager.ml/comandos/")
+                .setStyle('LINK'),
+        )
+        message.channel.send({ embeds: [setEmbed(message,`Vá a nosso site para ver a lista de comandos.\n\nNível ${server.list[serv].permission}/5 de permissão de servidor.`, "Ajuda", "Desenvolvido por Frederico Andrade")], components: [row] })
         return
     }
     //Nível 2
@@ -293,7 +295,7 @@ client.on("messageCreate", async function(message){
                 console.log(error);
             }
         })
-        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: Missão apagada com sucesso`, "", "", "", "1baf22")] })
+        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: Missão apagada com sucesso.`, "", "", "", "1baf22")] })
         return
     }
     //postar-missão
@@ -369,6 +371,8 @@ client.on("messageCreate", async function(message){
         message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: O id cargo de gerenciador foi definido com sucesso para ${server.list[serv].manutentionRoleID}.`, "", "", "", "1baf22")] })
         return
     }
+    //Nível 3
+    if (server.list[serv].permission < 3){return}
     //registrar-agência
     else if(c == cmds.list[13].command[0] || c == cmds.list[13].command[1]){
         var elements = ["",""]
@@ -409,7 +413,7 @@ client.on("messageCreate", async function(message){
         return
     }
     //agência
-    else if (c == cmds.list[14].command[0] || c == cmds.list[14].command[1] || c == cmds.list[14].command[3]){
+    else if (c == cmds.list[14].command[0] || c == cmds.list[14].command[1] || c == cmds.list[14].command[2]){
         if (a[0] != undefined){syntaxError(message, 14); return}
         var agencyI
         for (var i = 0; i < server.list[serv].agencies.length; i++){
@@ -418,13 +422,13 @@ client.on("messageCreate", async function(message){
                 break
             }
             if (i == server.list[serv].agencies.length-1){
-                message.channel.send({ embeds: [setEmbed(message,`:x: Você não tem uma agência registrada.`, "", "", "", "ef5250")] })
+                message.channel.send({ embeds: [setEmbed(message,`:x: Você ainda não tem uma agência registrada.`, "", "", "", "ef5250")] })
                 return
             }
         }
         embed = new Discord.MessageEmbed()
         .setColor("#17b091")
-        .setAuthor("")
+        .setAuthor(message.author.tag, message.author.avatarURL())
         .setTitle("Agência: " + server.list[serv].agencies[agencyI].name)
         .setFields(
             {name: `:level_slider: Nível: ${server.list[serv].agencies[agencyI].level}`, value: `\u200B`},
@@ -436,10 +440,33 @@ client.on("messageCreate", async function(message){
         message.channel.send({ embeds: [embed] })
         return
     }
-    //Nível 3
-    if (server.list[serv].permission < 3){return}
+    //remover-agência
+    else if(c == cmds.list[15].command[0] || c == cmds.list[15].command[1]){
+        if (a[0] != "confirmar" || a[1] != "remoção"){syntaxError(message, 15); return}
+        var agencyI
+        for (var i = 0; i < server.list[serv].agencies.length; i++){
+            if (message.author.id == server.list[serv].agencies[i].userId){
+                agencyI = i
+                break
+            }
+            if (i == server.list[serv].agencies.length-1){
+                message.channel.send({ embeds: [setEmbed(message,`:x: Você ainda não tem uma agência registrada.`, "", "", "", "ef5250")] })
+                return
+            }
+        }
+        server.list[serv].agencies.splice(agencyI, 1)
+        fs.writeFile("server.json", JSON.stringify(server), function(error){
+            if(error){
+                console.log(error);
+            }
+        })
+        message.channel.send({ embeds: [setEmbed(message, `:white_check_mark: Agência removida com sucesso.`, "", "", "", "1baf22")] })
+        return
+    }
     //executar-lançamento
-    else if(c == cmds.list[15].command[0] || c == cmds.list[15].command[1]){}
+    else if(c == cmds.list[16].command[0] || c == cmds.list[16].command[1] || c == cmds.list[16].command[2]){
+
+    }
     } catch (error) {
         console.log(error)
         message.channel.send({ embeds: [setEmbed(message,`:frowning2: Algo de muito errado aconteceu! Chame o Frederico Andrade para ver se ele pode ajudar.`, "", "", "", "ef5250")] })
@@ -471,4 +498,4 @@ function syntaxError(m, i){
     .setColor("ef5250")
     m.channel.send({embeds: [embed]})
 }
-client.login(config.token)
+client.login(config.token2)
