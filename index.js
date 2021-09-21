@@ -498,4 +498,4 @@ function syntaxError(m, i){
     .setColor("ef5250")
     m.channel.send({embeds: [embed]})
 }
-client.login(config.token2)
+client.login(config.token)
