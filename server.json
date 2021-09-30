@@ -7,6 +7,11 @@
             "missionChannelID": "875753037044535296",
             "manutentionRoleID": "851496472024973372",
             "missions": [],
+            "research": {
+                "max": 5,
+                "min": 1,
+                "cost": 4500
+            },
             "blueprints": {
                 "private": {
                     "cost": 150000,
