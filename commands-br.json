@@ -1,21 +1,21 @@
 {
     "list":[
         {
-            "command": ["calcule-lançamento", "calcule-lancamento", "cl"],
-            "syntax": "calcule-lançamento [massa] [reutilizável(s/n)] [dificuldade(1 a 6)]",
-            "description": "Calcula o valor de recompensa de lançamentos individuais.",
+            "command": ["pagar-lançamento", "pagar-lancamento", "pl"],
+            "syntax": "pagar-lançamento [usuário] [massa] [reutilizável(s/n)] [dificuldade(1 a 6)]",
+            "description": "Concluí um lançamento para a agência selecionada.",
             "nvlPermission": 1
         },
         {
-            "command": ["calcule-missão", "calcule-missão", "cm"],
-            "syntax": "calcule-missão [massa] [reutilizável(s/n)] [dificuldade(1 a 6)]",
-            "description": "Calcula o valor de recompensa de cumprimento de missão.",
+            "command": ["pagar-missão", "pagar-missão", "pm"],
+            "syntax": "pagar-missão [usuário] [massa] [reutilizável(s/n)] [dificuldade(1 a 6)]",
+            "description": "Concluí uma missão para a agência selecionada.",
             "nvlPermission": 1
         },
         {
-            "command": ["calcule-criador", "cc"],
-            "syntax": "calcule-criador [número de concluíntes] [dificuldade(1 a 6)]",
-            "description": "Calcula o valor da recompensa dada aos criadores de missão.",
+            "command": ["pagar-criador", "pc"],
+            "syntax": "pagar-criador [usuário] [número de concluíntes] [dificuldade(1 a 6)]",
+            "description": "Faz um pagamento da recompensa dada aos criadores de missão.",
             "nvlPermission": 1
         },
         {
@@ -32,8 +32,8 @@
         },
         {
             "command": ["remover-nível", "remover-nivel", "rn"],
-            "syntax": "remover-nível [número do nível]",
-            "description": "Remove o nível selecionado. Redefine a ordem dos subsequentes. Apague com cuidado.",
+            "syntax": "remover-nível [nível]",
+            "description": "Remove o nível selecionado. Redefine a ordem dos subsequentes.",
             "nvlPermission": 1
         },
         {
@@ -68,13 +68,13 @@
         },
         {
             "command": ["definir-canal-missões", "definir-canal-missoes", "dcm"],
-            "syntax": "definir-canal-missões [ID do canal]",
+            "syntax": "definir-canal-missões [canal]",
             "description": "Define o canal onde serão postadas as missões.",
             "nvlPermission": 2
         },
         {
             "command": ["definir-cargo-gerenciador", "dcg"],
-            "syntax": "definir-cargo-gerenciador [ID do cargo]",
+            "syntax": "definir-cargo-gerenciador [cargo]",
             "description": "Define o cargo que pode usar alguns comandos específicos.",
             "nvlPermission": 2
         },
@@ -86,7 +86,7 @@
         },
         {
             "command": ["agência", "agencia", "a"],
-            "syntax": "agência",
+            "syntax": "agência (usuário)",
             "description": "Mostra informações sobre a agência do usuário.",
             "nvlPermission": 2
         },
@@ -97,9 +97,51 @@
             "nvlPermission": 2
         },
         {
-            "command": ["executar-lançamento", "executar-lancamento", "el"],
-            "syntax": "executar-lançamento [objetivo] [massa] [reutilizável(s/n)] [dificuldade] [url de imagens(separe com & para adicionar várias)]",
-            "description": "Executa um lançamento.",
+            "command": ["registros", "r"],
+            "syntax": "registros",
+            "description": "Mostra os últimos dez registros de acontecimentos da agência.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["pesquisar", "p"],
+            "syntax": "pesquisar [número de pacotes de pesquisas]",
+            "description": "Faz um investimento em um determinado número de pacotes de pesquisa.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["atualizar"],
+            "syntax": "atualizar",
+            "description": "Avança para o próximo nível a agência do usuário.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["remover-dinheiro", "rd"],
+            "syntax": "remover-dinheiro [usuário] [quantidade]",
+            "description": "Remove dinheiro da agência do usuário selecionado.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["adicionar-dinheiro", "ad"],
+            "syntax": "adicionar-dinheiro [usuário] [quantidade]",
+            "description": "Adiciona dinheiro para agência do usuário selecionado.",
+            "nvlPermission": 2
+        },
+        {
+            "command": ["registrar-blueprint", "ab"],
+            "syntax": "registrar-blueprint [nome] & [descrição] & [peso] & [reutilizável(s/n)] & {Pública / Privada} & [imagem(url)] & [arquivo(url)]",
+            "description": "Adiciona uma blueprint em nome da agência do usuário. Use & para separar argumentos. A opção pública pode ser usada por outros jogadores, que pagarão uma taxa para seu criador, no entanto, seu custo é maior. Apenas uma imagem pode ser adicionada e a sua extenção deve ser .png ou .jpg. Apenas a extensão .zip ou .rar é aceita como arquivo de blueprint.",
+            "nvlPermission": 3
+        },
+        {
+            "command": ["minhas-blueprints", "mb"],
+            "syntax": "minhas-blueprints",
+            "description": "Mostra todas as blueprints criadas pela agência do usuário.",
+            "nvlPermission": 3
+        },
+        {
+            "command": ["remover-blueprint", "rb"],
+            "syntax": "remover-blueprint [número da blueprint]",
+            "description": "Remove a blueprint selecionada.",
             "nvlPermission": 3
         }
     ]

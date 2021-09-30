@@ -1,1 +1,135 @@
-{"list":[{"id":"470962283627937792","permission":2,"prefix":"=","missionChannelID":"875753037044535296","manutentionRoleID":"851496472024973372","missions":[["volta a vênus ","depois de muitos anos sem mandar nenhuma sonda até vênus, a roscosmos decide enviar outra sonda até o planeta, com seu novo e desenvolvido projeto, que consegue aguentar o calor de vênus.","pouse e recolha amostras do solo de vênus e volte com elas para a terra em segurança.",3,"o foguete deve conter apenas 3 estágios, e 1 painel solar na sonda.","cheats ou bugs.","2 dias.","Zirilo#2717"]],"levels":[[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]],"agencies":[{}]},{"id":"875804131472855040","permission":5,"prefix":["="],"missionChannelID":"884627550305923092","manutentionRoleID":"","missions":[["3a ","a ","a ",1,"a ","a ","a ","Frederico Andrade#7061"]],"levels":[[20000,40000,8000,20],[25000,50000,10000,20],[30000,60000,12000,20],[35000,70000,14000,20],[40000,80000,16000,20],[45000,90000,18000,20]],"agencies":[{}]}]}
+{
+    "list": [
+        {
+            "id": "470962283627937792",
+            "permission": 2,
+            "prefix": "=",
+            "missionChannelID": "875753037044535296",
+            "manutentionRoleID": "851496472024973372",
+            "missions": [],
+            "blueprints": {
+                "private": {
+                    "cost": 150000,
+                    "dailyTax": 5000
+                },
+                "public": {
+                    "cost": 450000,
+                    "dailyTax": 15000,
+                    "useTax": 0.2
+                }
+            },
+            "levels": [
+                {
+                    "description": "É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua.",
+                    "launch": 20000,
+                    "missions": 40000,
+                    "creator": 8000,
+                    "costPerTon": 20,
+                    "upgradePrice": 0,
+                    "researchPoints": 0,
+                    "maxResearchPoints": 300,
+                    "maxBlueprints": 3
+                },
+                {
+                    "description": "Pode fazer órbitas ou pousar em Marte e em Vênus.",
+                    "launch": 25000,
+                    "missions": 50000,
+                    "creator": 10000,
+                    "costPerTon": 20,
+                    "upgradePrice": 500000,
+                    "researchPoints": 300,
+                    "maxResearchPoints": 700,
+                    "maxBlueprints": 5
+                },
+                {
+                    "description": "Pode ir a qualquer outro planeta ou Lua do sistema solar.",
+                    "launch": 30000,
+                    "missions": 60000,
+                    "creator": 12000,
+                    "costPerTon": 20,
+                    "upgradePrice": 1500000,
+                    "researchPoints": 700,
+                    "maxResearchPoints": 1000,
+                    "maxBlueprints": 10
+                }
+            ],
+            "agencies": [
+                {}
+            ],
+            "queuedOps": []
+        },
+        {
+            "id": "875804131472855040",
+            "permission": 5,
+            "prefix": "=",
+            "missionChannelID": "884627550305923092",
+            "manutentionRoleID": "",
+            "missions": [],
+            "research": {
+                "max": 5,
+                "min": 1,
+                "cost": 4500
+            },
+            "blueprints": {
+                "private": {
+                    "cost": 150000,
+                    "dailyTax": 5000
+                },
+                "public": {
+                    "cost": 450000,
+                    "dailyTax": 15000,
+                    "useTax": 0.2
+                }
+            },
+            "levels": [
+                {
+                    "description": "É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua.",
+                    "launch": 20000,
+                    "missions": 40000,
+                    "creator": 8000,
+                    "costPerTon": 20,
+                    "upgradePrice": 0,
+                    "researchPoints": 0,
+                    "maxResearchPoints": 300,
+                    "maxBlueprints": 3
+                },
+                {
+                    "description": "Pode fazer órbitas ou pousar em Marte e em Vênus.",
+                    "launch": 25000,
+                    "missions": 50000,
+                    "creator": 10000,
+                    "costPerTon": 20,
+                    "upgradePrice": 500000,
+                    "researchPoints": 300,
+                    "maxResearchPoints": 700,
+                    "maxBlueprints": 5
+                },
+                {
+                    "description": "Pode ir a qualquer outro planeta ou Lua do sistema solar.",
+                    "launch": 30000,
+                    "missions": 60000,
+                    "creator": 12000,
+                    "costPerTon": 20,
+                    "upgradePrice": 1500000,
+                    "researchPoints": 700,
+                    "maxResearchPoints": 1000,
+                    "maxBlueprints": 10
+                }
+            ],
+            "agencies": [
+                {},
+                {
+                    "userId": "470960699863072768",
+                    "name": "a1 ",
+                    "description": "d1 ",
+                    "level": 1,
+                    "research": 0,
+                    "blueprints": [],
+                    "money": 0,
+                    "statement": []
+                }
+            ],
+            "queuedOps": []
+        }
+    ]
+}
