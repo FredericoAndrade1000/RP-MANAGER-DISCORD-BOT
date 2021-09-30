@@ -18,13 +18,18 @@ client.on("guildCreate", function (guild) {
         }
         else {
             server.list.push({
-                id: message.guild.id,
+                id: guild.id,
                 locale: guild.preferredLocale,
                 permission: 1,
                 prefix: "=",
                 missionChannelID: "",
                 manutentionRoleID: "",
                 missions: [],
+                research: {
+                    max: 5,
+                    min: 1,
+                    cost: 4500
+                },
                 blueprints: {
                     private: {
                         cost: 150000,
@@ -92,12 +97,17 @@ client.on("messageCreate", async function (message) {
             if (i + 1 == server.list.length) {
                 server.list.push({
                     id: message.guild.id,
-                    locale: guild.preferredLocale,
+                    locale: message.guild.preferredLocale,
                     permission: 1,
                     prefix: "=",
                     missionChannelID: "",
                     manutentionRoleID: "",
                     missions: [],
+                    research: {
+                        max: 5,
+                        min: 1,
+                        cost: 4500
+                    },
                     blueprints: {
                         private: {
                             cost: 150000,
@@ -139,6 +149,7 @@ client.on("messageCreate", async function (message) {
                     agencies: [{}],
                     queuedOps: []
                 })
+                serv = i + 1
                 fs.writeFile("server.json", JSON.stringify(server), function (error) {
                     if (error) {
                         console.log(error);
@@ -178,8 +189,8 @@ client.on("messageCreate", async function (message) {
                     break
                 }
             }
-            if (server.list[serv].agencies[agencyI].level > server.list[serv].levels[a[3] - 1]) {
-                message.channel.send({ embeds: [setEmbed(message, `:x: O usuário ainda não possui o nível ${a[2]}.`, "", "", "", "ef5250")] })
+            if (server.list[serv].agencies[agencyI].level < a[3]) {
+                message.channel.send({ embeds: [setEmbed(message, `:x: O usuário ainda não possui o nível ${a[3]}.`, "", "", "", "ef5250")] })
                 return
             }
             let reward, balanceResult, isReusable = "Não"
@@ -235,8 +246,8 @@ client.on("messageCreate", async function (message) {
                     break
                 }
             }
-            if (server.list[serv].agencies[agencyI].level > server.list[serv].levels[a[3] - 1]) {
-                message.channel.send({ embeds: [setEmbed(message, `:x: O usuário ainda não possui o nível ${a[2]}.`, "", "", "", "ef5250")] })
+            if (server.list[serv].agencies[agencyI].level < a[3]) {
+                message.channel.send({ embeds: [setEmbed(message, `:x: O usuário ainda não possui o nível ${a[3]}.`, "", "", "", "ef5250")] })
                 return
             }
             let reward, balanceResult, isReusable = "Não"
@@ -292,7 +303,7 @@ client.on("messageCreate", async function (message) {
                     break
                 }
             }
-            if (server.list[serv].agencies[agencyI].level > server.list[serv].levels[a[2] - 1]) {
+            if (server.list[serv].agencies[agencyI].level < a[2]) {
                 message.channel.send({ embeds: [setEmbed(message, `:x: O usuário ainda não possui o nível ${a[2]}.`, "", "", "", "ef5250")] })
                 return
             }
