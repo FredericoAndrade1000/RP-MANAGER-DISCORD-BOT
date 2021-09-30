@@ -1,1 +1,224 @@
-{"list":[{"id":"875804131472855040","permission":5,"prefix":"|","missionChannelID":"884627550305923092","manutentionRoleID":"","missions":[],"research":{"max":5,"min":1,"cost":4500},"blueprints":{"private":{"cost":150000,"dailyTax":5000},"public":{"cost":450000,"dailyTax":15000,"useTax":0.2}},"levels":[{"description":"É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua.","launch":20000,"missions":40000,"creator":8000,"costPerTon":20,"upgradePrice":0,"researchPoints":0,"maxResearchPoints":300,"maxBlueprints":3},{"description":"Pode fazer órbitas ou pousar em Marte e em Vênus.","launch":25000,"missions":50000,"creator":10000,"costPerTon":20,"upgradePrice":500000,"researchPoints":300,"maxResearchPoints":700,"maxBlueprints":5},{"description":"Pode ir a qualquer outro planeta ou Lua do sistema solar.","launch":30000,"missions":60000,"creator":12000,"costPerTon":20,"upgradePrice":1500000,"researchPoints":700,"maxResearchPoints":1000,"maxBlueprints":10}],"agencies":[{}],"queuedOps":[]},{"id":"470962283627937792","permission":2,"prefix":"|","missionChannelID":"875753037044535296","manutentionRoleID":"851496472024973372","missions":[],"research":{"max":5,"min":1,"cost":4500},"blueprints":{"private":{"cost":150000,"dailyTax":5000},"public":{"cost":450000,"dailyTax":15000,"useTax":0.2}},"levels":[{"description":"É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua.","launch":20000,"missions":40000,"creator":8000,"costPerTon":20,"upgradePrice":0,"researchPoints":0,"maxResearchPoints":300,"maxBlueprints":3},{"description":"Pode fazer órbitas ou pousar em Marte e em Vênus.","launch":25000,"missions":50000,"creator":10000,"costPerTon":20,"upgradePrice":500000,"researchPoints":300,"maxResearchPoints":700,"maxBlueprints":5},{"description":"Pode ir a qualquer outro planeta ou Lua do sistema solar.","launch":30000,"missions":60000,"creator":12000,"costPerTon":20,"upgradePrice":1500000,"researchPoints":700,"maxResearchPoints":1000,"maxBlueprints":10}],"agencies":[{},{"userId":"470960699863072768","name":"t ","description":"d ","level":1,"research":0,"blueprints":[],"money":0,"statement":[]}],"queuedOps":[]},{"id":"884517353008824330","locale":"en-US","permission":2,"prefix":"=","missionChannelID":"","manutentionRoleID":"","missions":[],"research":{"max":5,"min":1,"cost":4500},"blueprints":{"private":{"cost":150000,"dailyTax":5000},"public":{"cost":450000,"dailyTax":15000,"useTax":0.2}},"levels":[{"description":"É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua e ter até três blueprints.","launch":20000,"missions":40000,"creator":8000,"costPerTon":20,"upgradePrice":0,"maxResearchPoints":300,"researchPoints":0,"maxBlueprints":3},{"description":"Pode fazer órbitas ou pousar em Marte e em Vênus. Tem o valor máximo de cinco blueprints.","launch":25000,"missions":50000,"creator":10000,"costPerTon":20,"upgradePrice":1000000,"maxResearchPoints":700,"researchPoints":500,"maxBlueprints":5},{"description":"Pode ir a qualquer outro planeta ou Lua do sistema solar. Tem o valor máximo de dez blueprints.","launch":30000,"missions":60000,"creator":12000,"costPerTon":20,"upgradePrice":10000000,"maxResearchPoints":1000,"researchPoints":2000,"maxBlueprints":10}],"agencies":[{},{"userId":"655540837228216332","name":"a ","description":"f ","level":1,"research":0,"blueprints":[],"money":0,"statement":[]},{"userId":"470960699863072768","name":"a ","description":"b ","level":1,"research":0,"blueprints":[],"money":0,"statement":[]}],"queuedOps":[]}]}
+{
+    "list": [
+        {
+            "id": "875804131472855040",
+            "permission": 5,
+            "prefix": "=",
+            "missionChannelID": "884627550305923092",
+            "manutentionRoleID": "",
+            "missions": [],
+            "research": {
+                "max": 5,
+                "min": 1,
+                "cost": 4500
+            },
+            "blueprints": {
+                "private": {
+                    "cost": 150000,
+                    "dailyTax": 5000
+                },
+                "public": {
+                    "cost": 450000,
+                    "dailyTax": 15000,
+                    "useTax": 0.2
+                }
+            },
+            "levels": [
+                {
+                    "description": "É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua.",
+                    "launch": 20000,
+                    "missions": 40000,
+                    "creator": 8000,
+                    "costPerTon": 20,
+                    "upgradePrice": 0,
+                    "researchPoints": 0,
+                    "maxResearchPoints": 300,
+                    "maxBlueprints": 3
+                },
+                {
+                    "description": "Pode fazer órbitas ou pousar em Marte e em Vênus.",
+                    "launch": 25000,
+                    "missions": 50000,
+                    "creator": 10000,
+                    "costPerTon": 20,
+                    "upgradePrice": 500000,
+                    "researchPoints": 300,
+                    "maxResearchPoints": 700,
+                    "maxBlueprints": 5
+                },
+                {
+                    "description": "Pode ir a qualquer outro planeta ou Lua do sistema solar.",
+                    "launch": 30000,
+                    "missions": 60000,
+                    "creator": 12000,
+                    "costPerTon": 20,
+                    "upgradePrice": 1500000,
+                    "researchPoints": 700,
+                    "maxResearchPoints": 1000,
+                    "maxBlueprints": 10
+                }
+            ],
+            "agencies": [
+                {}
+            ],
+            "queuedOps": []
+        },
+        {
+            "id": "470962283627937792",
+            "permission": 2,
+            "prefix": "=",
+            "missionChannelID": "875753037044535296",
+            "manutentionRoleID": "851496472024973372",
+            "missions": [],
+            "research": {
+                "max": 5,
+                "min": 1,
+                "cost": 4500
+            },
+            "blueprints": {
+                "private": {
+                    "cost": 150000,
+                    "dailyTax": 5000
+                },
+                "public": {
+                    "cost": 450000,
+                    "dailyTax": 15000,
+                    "useTax": 0.2
+                }
+            },
+            "levels": [
+                {
+                    "description": "É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua.",
+                    "launch": 20000,
+                    "missions": 40000,
+                    "creator": 8000,
+                    "costPerTon": 20,
+                    "upgradePrice": 0,
+                    "researchPoints": 0,
+                    "maxResearchPoints": 300,
+                    "maxBlueprints": 3
+                },
+                {
+                    "description": "Pode fazer órbitas ou pousar em Marte e em Vênus.",
+                    "launch": 25000,
+                    "missions": 50000,
+                    "creator": 10000,
+                    "costPerTon": 20,
+                    "upgradePrice": 500000,
+                    "researchPoints": 300,
+                    "maxResearchPoints": 700,
+                    "maxBlueprints": 5
+                },
+                {
+                    "description": "Pode ir a qualquer outro planeta ou Lua do sistema solar.",
+                    "launch": 30000,
+                    "missions": 60000,
+                    "creator": 12000,
+                    "costPerTon": 20,
+                    "upgradePrice": 1500000,
+                    "researchPoints": 700,
+                    "maxResearchPoints": 1000,
+                    "maxBlueprints": 10
+                }
+            ],
+            "agencies": [
+                {},
+                {
+                    "userId": "470960699863072768",
+                    "name": "t ",
+                    "description": "d ",
+                    "level": 1,
+                    "research": 0,
+                    "blueprints": [],
+                    "money": 0,
+                    "statement": []
+                }
+            ],
+            "queuedOps": []
+        },
+        {
+            "id": "884517353008824330",
+            "locale": "en-US",
+            "permission": 2,
+            "prefix": "=",
+            "missionChannelID": "",
+            "manutentionRoleID": "",
+            "missions": [],
+            "research": {
+                "max": 5,
+                "min": 1,
+                "cost": 4500
+            },
+            "blueprints": {
+                "private": {
+                    "cost": 150000,
+                    "dailyTax": 5000
+                },
+                "public": {
+                    "cost": 450000,
+                    "dailyTax": 15000,
+                    "useTax": 0.2
+                }
+            },
+            "levels": [
+                {
+                    "description": "É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua e ter até três blueprints.",
+                    "launch": 20000,
+                    "missions": 40000,
+                    "creator": 8000,
+                    "costPerTon": 20,
+                    "upgradePrice": 0,
+                    "maxResearchPoints": 300,
+                    "researchPoints": 0,
+                    "maxBlueprints": 3
+                },
+                {
+                    "description": "Pode fazer órbitas ou pousar em Marte e em Vênus. Tem o valor máximo de cinco blueprints.",
+                    "launch": 25000,
+                    "missions": 50000,
+                    "creator": 10000,
+                    "costPerTon": 20,
+                    "upgradePrice": 1000000,
+                    "maxResearchPoints": 700,
+                    "researchPoints": 500,
+                    "maxBlueprints": 5
+                },
+                {
+                    "description": "Pode ir a qualquer outro planeta ou Lua do sistema solar. Tem o valor máximo de dez blueprints.",
+                    "launch": 30000,
+                    "missions": 60000,
+                    "creator": 12000,
+                    "costPerTon": 20,
+                    "upgradePrice": 10000000,
+                    "maxResearchPoints": 1000,
+                    "researchPoints": 2000,
+                    "maxBlueprints": 10
+                }
+            ],
+            "agencies": [
+                {},
+                {
+                    "userId": "655540837228216332",
+                    "name": "a ",
+                    "description": "f ",
+                    "level": 1,
+                    "research": 0,
+                    "blueprints": [],
+                    "money": 0,
+                    "statement": []
+                },
+                {
+                    "userId": "470960699863072768",
+                    "name": "a ",
+                    "description": "b ",
+                    "level": 1,
+                    "research": 0,
+                    "blueprints": [],
+                    "money": 0,
+                    "statement": []
+                }
+            ],
+            "queuedOps": []
+        }
+    ]
+}
