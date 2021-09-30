@@ -1241,4 +1241,4 @@ function queuedOps() {
 function mentionToId (c){
     return c.replace("<","").replace(">","").replace("!","").replace("@","").replace("#","")
 }
-client.login(config.token2)
+client.login(config.token)
