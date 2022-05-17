@@ -1,0 +1,135 @@
+{
+    "economyConfig":{
+        "transferTax": 5
+    },
+    "agency": {
+        "levels": [
+            {
+                "description": "É possível fazer órbitas na Terra e na Lua. Pode fazer pousos na superfície da Lua e ter até três blueprints.",
+                "launch": 2000,
+                "missions": 4000,
+                "creator": 800,
+                "costPerTon": 2,
+                "upgradePrice": 0,
+                "maxResearchPoints": 300,
+                "researchPoints": 0
+            },
+            {
+                "description": "Pode fazer órbitas ou pousar em Marte e em Vênus. Tem o valor máximo de cinco blueprints.",
+                "launch": 2500,
+                "missions": 5000,
+                "creator": 1000,
+                "costPerTon": 2,
+                "upgradePrice": 750000,
+                "maxResearchPoints": 700,
+                "researchPoints": 500
+            },
+            {
+                "description": "Pode ir a qualquer outro planeta ou Lua do sistema solar. Tem o valor máximo de dez blueprints.",
+                "launch": 3000,
+                "missions": 6000,
+                "creator": 1200,
+                "costPerTon": 2,
+                "upgradePrice": 7500000,
+                "maxResearchPoints": 1000,
+                "researchPoints": 2000
+            }
+        ],
+        "research": {
+            "max": 5,
+            "min": 1,
+            "cost": 450,
+            "accelerator": {
+                "range": 3,
+                "cost": 550
+            }
+        }
+    },
+    "farm": {
+        "plants": [
+            {
+                "name": "Nabo",
+                "cost": 300,
+                "timeNeeded": "6h",
+                "spaceNeeded": 1,
+                "levelNeeded": 1,
+                "minEarn": 405,
+                "maxEarn": 506
+            },
+            {
+                "name": "Cenoura",
+                "cost": 600,
+                "timeNeeded": "8h",
+                "spaceNeeded": 1,
+                "levelNeeded": 1,
+                "minEarn": 735,
+                "maxEarn": 918
+            },
+            {
+                "name": "Milho",
+                "cost": 1500,
+                "timeNeeded": "3d",
+                "spaceNeeded": 2,
+                "levelNeeded": 1,
+                "minEarn": 2610,
+                "maxEarn": 3265
+            },
+            {
+                "name": "Feijão",
+                "cost": 2500,
+                "timeNeeded": "2d",
+                "spaceNeeded": 2,
+                "levelNeeded": 1,
+                "minEarn": 3250,
+                "maxEarn": 4065
+            },
+            {
+                "name": "Soja",
+                "cost": 4500,
+                "timeNeeded": "6d",
+                "spaceNeeded": 2,
+                "levelNeeded": 1,
+                "minEarn": 6690,
+                "maxEarn": 8362
+            },
+            {
+                "name": "Abóbora",
+                "cost": 4000,
+                "timeNeeded": "2d",
+                "spaceNeeded": 4,
+                "levelNeeded": 1,
+                "minEarn": 5980,
+                "maxEarn": 7475
+            },
+            {
+                "name": "Árvore-de-Foguetes",
+                "cost": 400000,
+                "timeNeeded": "6d",
+                "spaceNeeded": 20,
+                "levelNeeded": 3,
+                "minEarn": 200000,
+                "maxEarn": 800000
+            }
+        ],
+        "companyConfig": {
+            "levels": [
+                {
+                    "upgradePrice": 0,
+                    "maxSpace": 10,
+                    "spaceCost": 10000
+                },
+                {
+                    "upgradePrice": 75600,
+                    "maxSpace": 25,
+                    "spaceCost": 25000
+                },
+                {
+                    "upgradePrice": 225000,
+                    "maxSpace": 40,
+                    "spaceCost": 40000
+                }
+            ],
+            "startSpace": 3
+        }
+    }
+}
